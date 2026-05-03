@@ -1,0 +1,169 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{minipage}[c]{0.75\textwidth}
+\begin{flushleft}
+    \textbf{\Huge \scshape <%- personal.name %>} \\ \vspace{3pt}
+    \small <%- personal.phone %> $|$ \href{mailto:<%- personal.email %>}{\underline{<%- personal.email %>}} $|$ 
+    \href{https://<%- personal.linkedin %>}{\underline{<%- personal.linkedin %>}} $|$
+    \href{https://<%- personal.github %>}{\underline{<%- personal.github %>}}
+\end{flushleft}
+\end{minipage}%
+\begin{minipage}[c]{0.25\textwidth}
+\begin{flushright}
+  <% if (personal.photo) { %>
+    \includegraphics[height=1.0in]{<%- personal.photo %>}
+  <% } %>
+\end{flushright}
+\end{minipage}
+
+
+%-----------SUMMARY-----------
+<% if (summary) { %>
+\section{Summary}
+  \small{<%- summary %>}
+  \vspace{5pt}
+<% } %>
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+  <% education.forEach(function(edu) { %>
+    \resumeSubheading
+      {<%- edu.university || edu.school || edu.institution %>}{<%- edu.location %>}
+      {<%- edu.degree %>}{<%- edu.dates %>}
+      <% if (edu.coursework || (edu.bullets && edu.bullets.length > 0)) { %>
+        \resumeItemListStart
+          <% if (edu.coursework) { %>
+            \resumeItem{\textbf{Relevant Coursework}: <%- edu.coursework %>}
+          <% } %>
+          <% if (edu.bullets) { %>
+            <% edu.bullets.forEach(function(bullet) { %>
+              \resumeItem{<%- bullet %>}
+            <% }); %>
+          <% } %>
+        \resumeItemListEnd
+      <% } else { %>
+        \vspace{7pt}
+      <% } %>
+  <% }); %>
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+  <% experience.forEach(function(exp) { %>
+    \resumeSubheading
+      {<%- exp.company %>}{<%- exp.location %>}
+      {<%- exp.title %>}{<%- exp.dates %>}
+      \resumeItemListStart
+      <% exp.bullets.forEach(function(bullet) { %>
+        \resumeItem{<%- bullet %>}
+      <% }); %>
+      \resumeItemListEnd
+  <% }); %>
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+    <% projects.forEach(function(proj) { %>
+      \resumeProjectHeading
+          {\textbf{<%- proj.name %>} $|$ \emph{Technologies Used: <%- proj.technologies %>}}{<%- proj.dates %>}
+          \resumeItemListStart
+          <% proj.bullets.forEach(function(bullet) { %>
+            \resumeItem{<%- bullet %>}
+          <% }); %>
+          \resumeItemListEnd
+    <% }); %>
+    \resumeSubHeadingListEnd
+
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     <% const skillKeys = Object.keys(skills); %>
+     <% skillKeys.forEach(function(key, index) { %>
+       \textbf{<%- key.charAt(0).toUpperCase() + key.slice(1) %>}{: <%- skills[key] %>} <% if(index < skillKeys.length - 1) { %> \\ <% } %>
+     <% }); %>
+    }}
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}

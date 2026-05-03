@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "ejs": "^5.0.2",
+    "handlebars": "^4.7.9"
+  }
+}
