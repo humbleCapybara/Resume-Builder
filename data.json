@@ -1,45 +1,29 @@
 {
   "personal": {
-    "name": "Abhrajyoti Das",
-    "phone": "+91-8371977977",
-    "email": "work.abrajyoti@gmail.com",
-    "linkedin": "linkedin.com/in/abhrajyotidas",
-    "github": "github.com/humbleCapybara",
-    "photo": "photo.jpg"
+    "name": "",
+    "phone": "",
+    "email": "",
+    "linkedin": "",
+    "github": "",
+    "photo": ""
   },
-  "summary": "Electronics and Telecommunication Engineering student with a strong foundation in networking concepts, system configuration, and network security. Hands-on experience in designing network topologies, configuring routing and switching, and troubleshooting connectivity issues using industry-standard tools. Currently focused on developing practical skills in network infrastructure and security, and seeking an opportunity to begin a career in network administration.",
+  "summary": "",
   "education": [
     {
-      "university": "KIIT University",
-      "location": "Bhubaneswar, Odisha",
-      "degree": "B.Tech. in Electronics & Telecommunication Engineering",
-      "dates": "June 2023 -- July 2027",
-      "coursework": "Data Structures, Algorithms, Databases, Computer Networks, Microprocessors"
-    },
-    {
-      "school": "Techno India Group Public School",
-      "location": "Coochbehar, West Bengal",
-      "degree": "Class 12th (CBSE)",
-      "dates": "2021 - 2023"
-    },
-    {
-      "school": "Techno India Group Public School",
-      "location": "Coochbehar, West Bengal",
-      "degree": "Class 10th (CBSE)",
-      "dates": "2020 - 2021"
+      "university": "",
+      "location": "",
+      "degree": "",
+      "dates": "",
+      "coursework": ""
     }
   ],
   "experience": [
     {
-      "company": "CISCO Networking Academy",
-      "location": "Remote",
-      "title": "Cisco Virtual Internship Programme",
-      "dates": "April 2026 - Present",
-      "bullets": [
-        "Gained hands-on knowledge of computer networking fundamentals, including IP addressing, subnetting, routing, and switching concepts.",
-        "Explored AI and automation concepts in networking, including intelligent network management and basic machine learning applications",
-        "Enhanced ability to apply theoretical networking concepts to practical scenarios and understand industry-standard best practices."
-      ]
+      "company": "",
+      "location": "",
+      "title": "",
+      "dates": "",
+      "bullets": []
     }
   ],
   "projects": [
